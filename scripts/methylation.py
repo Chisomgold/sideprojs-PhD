@@ -1,7 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 import sys
-import zipfile
+import gzip
 import pandas as pd
 
 # Get the methylation files from command-line arguments
@@ -11,12 +11,12 @@ methylation_txt = sys.argv[2]
 with gzip.open(methylation_zip, 'rt') as f:
     meth = pd.read_csv(f, sep='\t', header=0)
 
-#open methyltion identifier file
+#open methylation identifier file
 meth_id = pd.read_csv(methylation_txt, sep='\t', header=0)
 
 meth_id_filter = meth_id[['#id', 'chrom', 'chromStart', 'chromEnd', "gene"]]
 
-# merging methylaton table with the cg ids table
+# merging methylation table with the cg ids table
 merged_meth = pd.merge(meth_id_filter, meth, left_on = '#id', right_on = 'Composite Element REF', how='inner')
 
 #drop the id cols
