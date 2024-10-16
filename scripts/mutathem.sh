@@ -13,10 +13,10 @@ methylation_txt=$3
 window_size=${4:-0}
 
 echo "processing mutation data"
-python3 mutation.py "$mutation_file" > processed_mutation.tsv
+python scripts/mutation.py "$mutation_file" > processed_mutation.tsv
 
 echo "processing methylation data"
-python3 methylation.py "$methylation_zip" "$methylation_txt" > combined_methylation.tsv
+python scripts/methylation.py "$methylation_zip" "$methylation_txt" > combined_methylation.tsv
 
 #Remove lines with -1 in combined methylation file using grep
 # grep -v '\t-1\t' combined_methylation.tsv > filtered_methylation.tsv
