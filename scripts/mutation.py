@@ -15,10 +15,10 @@ with gzip.open(mutation_zip, 'rt') as z:
 df['Location'] = df['chrom'].astype(str) + ':' + df['start'].astype(str) + '-' + df['end'].astype(str)
 
 #filter out the columns of interest
-df_filter = df[['Sample_ID', 'Location']]
+#df_filter = df.iloc[:, [0, df.columns.get_loc('Location')]]
 
 #transform df to make unique samples column headers
-new_df = pd.crosstab(index=df_filter['Location'], columns=df_filter['Sample_ID'])
+new_df = pd.crosstab(index=df['Location'], columns=df.iloc[:, 0])
 
 #calculating mean mutations
 new_df['mean_mut'] = new_df.select_dtypes(include='number').mean(axis=1)
