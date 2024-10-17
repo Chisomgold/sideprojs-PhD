@@ -36,6 +36,10 @@ mut_data[['start', 'end']] = mut_data['pos'].str.split('-', n=1, expand=True)
 mut_data = mut_data.drop(columns=['pos', 'Location'])
 #reorder cols to fit bed format
 mut_data = mut_data[['chr', 'start', 'end', 'mean_mut']]
+mut_data = mut_data.dropna()
+mut_data = mut_data.astype({'start' : 'int64', 'end':'int64'})
+#merge with original data to get gene names
+merged = pd.merge(mut_data, df, left_on = ['chr', 'start', 'end'], right_on = ["chrom", "start", "end"], how='inner')
 
 # Output the processed data without a header
-mut_data.to_csv(sys.stdout, sep='\t', index=False, header=False)
+merged.to_csv(sys.stdout, sep='\t', index=False, header=False)
