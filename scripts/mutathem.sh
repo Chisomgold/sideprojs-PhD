@@ -28,7 +28,7 @@ else
     bedtools window -a processed_mutation.tsv -b combined_methylation.tsv > merged_output.tsv
 fi
 
-cut -f 9 merged_output.tsv | sort | uniq > unique_genes.txt
+cut -f 6 merged_output.tsv | sort | uniq > unique_genes.txt
 
 # Display the unique genes to the user
 echo "Some affected genes:"
