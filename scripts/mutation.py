@@ -3,6 +3,7 @@
 import sys
 import gzip
 import pandas as pd
+import numpy as np
 
 # Get the mutation zip file from command-line argument
 mutation_zip = sys.argv[1]
@@ -36,6 +37,7 @@ mut_data[['start', 'end']] = mut_data['pos'].str.split('-', n=1, expand=True)
 mut_data = mut_data.drop(columns=['pos', 'Location'])
 #reorder cols to fit bed format
 mut_data = mut_data[['chr', 'start', 'end', 'mean_mut']]
+mut_data = mut_data.replace("nan", np.nan)
 mut_data = mut_data.dropna()
 mut_data = mut_data.astype({'start' : 'int64', 'end':'int64'})
 #merge with original data to get gene names
