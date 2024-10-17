@@ -31,7 +31,8 @@ mut_data = mut_data[mut_data['mean_mut'] > mut_data['mean_mut'].min()] #selectin
 
 #new table with chr range and mean mutation
 mut_data[['chr', 'pos']] = mut_data['Location'].str.split(':', expand=True)
-mut_data[['start', 'end']] = mut_data['pos'].str.split('-', expand=True)
+mut_data = mut_data[mut_data['pos'].str.contains('-', na=False)]
+mut_data[['start', 'end']] = mut_data['pos'].str.split('-', n=1, expand=True)
 mut_data = mut_data.drop(columns=['pos', 'Location'])
 #reorder cols to fit bed format
 mut_data = mut_data[['chr', 'start', 'end', 'mean_mut']]
