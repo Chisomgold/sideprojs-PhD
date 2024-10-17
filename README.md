@@ -33,7 +33,7 @@ If `bedtools` is not installed on your system, you can install it with:
   ```
 
 ### Input data
-Somatic mutation zip file (.gz), DNA Methylation450k data (.gz), and DNA methylation ID mapping file of the same cancer, all downloaded from the TCGA datasets on xenabrowser.  The mutation file should be the public version option, not the gene-level non-silent mutation or other alternatives.
+Somatic mutation zip file (.gz), DNA Methylation450k data (.gz), and DNA methylation ID mapping file of the same cancer type, all downloaded from the TCGA datasets on xenabrowser.  The mutation file should be the public version option, not the gene-level non-silent mutation or other alternatives.
 
 ### Run the Pipeline
 ```bash
@@ -42,5 +42,5 @@ bash scripts/mutathem.sh <mutation.zip> <methylation.zip> <methylation.txt> [opt
 
 ### Example
 ```bash
-bash scripts/mutathem.sh data/mutation.zip data/methylation.zip data/methylation.txt 500
+bash scripts/mutathem.sh data/mutation.gz data/methylation.gz data/methylation.txt 500
 ```
