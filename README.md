@@ -45,6 +45,20 @@ bash scripts/mutathem.sh <mutation.zip> <methylation.zip> <methylation.txt> [opt
 **Note** that the default window size is 1000bp on both sides of any given location.
 
 ### Example
+Download mutation data (example)
 ```bash
-bash scripts/mutathem.sh data/mutation.gz data/methylation.gz data/methylation.txt 500
+wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-LAML.somaticmutation_wxs.tsv.gz
 ```
+Download methylation data (example)
+```bash
+wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/TCGA-LAML.methylation450.tsv.gz
+```
+Download methylation id data
+```bash
+wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/HM450.hg38.manifest.gencode.v36.probeMap
+```
+Then run...
+```bash
+bash scripts/mutathem.sh TCGA-LAML.somaticmutation_wxs.tsv.gz TCGA-LAML.methylation450.tsv.gz HM450.hg38.manifest.gencode.v36.probeMap 500
+```
+You should get a list of 10 genes intersected in that region. You will also find 2 files: `unique_gene.txt` with a list of all the genes present in affected regions and `merged_output.tsv` with more info on chromosome locations and mutation and methylation values.
