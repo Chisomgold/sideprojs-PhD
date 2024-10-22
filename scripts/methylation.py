@@ -17,10 +17,10 @@ meth_id = pd.read_csv(methylation_txt, sep='\t', header=0)
 meth_id_filter = meth_id[['#id', 'chrom', 'chromStart', 'chromEnd']]
 
 # merging methylation table with the cg ids table
-merged_meth = pd.merge(meth_id_filter, meth, left_on = '#id', right_on = 'Composite Element REF', how='inner')
+merged_meth = pd.merge(meth_id_filter.iloc[:, [0]], meth.iloc[:, [0]], how='inner', left_on=meth_id_filter.columns[0], right_on=meth.columns[0])
 
 #drop the id cols
-merged_meth = merged_meth.drop(columns=['#id', 'Composite Element REF'])
+merged_meth = merged_meth.drop(merged_meth.columns[[0, 1]], axis=1)
 
 merged_meth['median_meth'] = merged_meth.median(axis=1, numeric_only=True)
 
