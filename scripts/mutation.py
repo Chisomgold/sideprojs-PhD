@@ -58,7 +58,7 @@ mut_data = mut_data.replace("nan", np.nan)
 mut_data = mut_data.dropna()
 mut_data = mut_data.astype({'start' : 'int64', 'end':'int64'})
 #merge with original data to get gene names
-merged = pd.merge(mut_data, df, left_on = ['chr', 'start', 'end'], right_on = ["chrom", "start", "end"], how='inner')
+merged = pd.merge(mut_data, df, left_on = ['chr', 'start', 'end'], right_on = [chrom_col, start_col, end_col], how='inner')
 
 # Output the processed data without a header
 merged.to_csv(sys.stdout, sep='\t', index=False, header=False)
