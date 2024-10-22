@@ -19,9 +19,6 @@ meth_id_filter = meth_id[['#id', 'chrom', 'chromStart', 'chromEnd']]
 # merging methylation table with the cg ids table
 merged_meth = pd.merge(meth_id_filter, meth, how='inner', left_on=meth_id_filter.columns[0], right_on=meth.columns[0])
 
-#drop the id cols
-merged_meth = merged_meth.drop(merged_meth.columns[[0, 1]], axis=1)
-
 merged_meth['median_meth'] = merged_meth.median(axis=1, numeric_only=True)
 
 #extracting meth data with chr regions
