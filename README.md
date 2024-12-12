@@ -1,6 +1,6 @@
 # Bioinformatics Pipeline - Mutathem
 
-This tool processes mutation and methylation data using Python scripts and `bedtools`. It works with mutation and methylation zip files as well as methylation loci metadata downloaded from xenabrowser. It merges both data by genomic location based on the provided (optional) window and extracts unique genes.
+This tool processes mutation and methylation data (from Illumina platforms) using Python scripts and `bedtools`. It works with mutation data, methylation data, and methylation loci metadata downloaded from xenabrowser. It merges the data by genomic location based on a provided (optional) window and extracts unique genes within it. That is, it identifies genes within the regions of mutation and methylation sites.
 
 ## Installation
 
@@ -33,10 +33,10 @@ If `bedtools` is not installed on your system, you can install it with:
   ```
 
 ### Input data
-Somatic mutation zip file (.gz), DNA Methylation450k data (.gz), and DNA methylation ID mapping file of the same cancer type, all downloaded from the TCGA datasets on xenabrowser.  The mutation file should be the public version option, not the gene-level non-silent mutation or other alternatives.
+Somatic mutation zip file (.gz), DNA Methylation450k data (.gz), and DNA methylation ID mapping file of the same cancer type, all downloaded from the TCGA datasets on [xenabrowser](https://xenabrowser.net/datapages/).  The mutation file should be the public version option, not the gene-level non-silent mutation or other alternatives.
 
 ### Known Issues
-The data formats expected for this pipeline are not standard (like vcf, for instance). This means that in the event of an update to the data format or structure, including column header names, the pipeline might not work as expected. 
+The data formats expected for this pipeline are not standard (like vcf, for instance). This means that in the event of an update to the data format or structure on xenabrowser, including column header names, the pipeline might not work as expected. 
 
 ### Run the Pipeline
 ```bash
