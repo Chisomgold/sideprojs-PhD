@@ -1,7 +1,8 @@
-# Bioinformatics Pipeline - Muthina
+# A Pipeline called Muthina 
+(name derived from **mu**tation, me**th**ylation and Illum**ina** because why not)
 
-This tool processes mutation and methylation data (from Illumina platforms) using Python scripts and `bedtools`. It works with mutation data, methylation data (beta values), and methylation loci metadata downloaded from xenabrowser. It merges the data by genomic location based on a provided (optional) window and extracts unique genes within it. That is, it identifies genes within the regions of mutation and methylation sites. 
-A short but detailed breakdown of the thought process is present in this [mini-report](https://docs.google.com/document/d/12HSsUbQ4PH-vkkRubOqH6dFDT0Bk2c1w89hrxsOmn58/edit?usp=sharing).
+This pipeline processes mutation and methylation data (from Illumina platforms) using Python scripts and `bedtools`. It works with mutation data, methylation data (beta values), and methylation loci metadata downloaded from xenabrowser. It merges the data by genomic location based on a provided (optional) window and extracts unique genes within it. That is, it identifies genes within the regions of mutation and methylation sites. It has 3 scripts, all of which are individually usable/adaptable. 
+A short but detailed breakdown of the thought process behind this is present in this [mini-report](https://docs.google.com/document/d/12HSsUbQ4PH-vkkRubOqH6dFDT0Bk2c1w89hrxsOmn58/edit?usp=sharing).
 
 ## Installation
 
