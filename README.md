@@ -1,6 +1,6 @@
-# Bioinformatics Pipeline - Mutathem
+# Bioinformatics Pipeline - Muthina
 
-This tool processes mutation and methylation data (from Illumina platforms) using Python scripts and `bedtools`. It works with mutation data, methylation data, and methylation loci metadata downloaded from xenabrowser. It merges the data by genomic location based on a provided (optional) window and extracts unique genes within it. That is, it identifies genes within the regions of mutation and methylation sites.
+This tool processes mutation and methylation data (from Illumina platforms) using Python scripts and `bedtools`. It works with mutation data, methylation data (beta values), and methylation loci metadata downloaded from xenabrowser. It merges the data by genomic location based on a provided (optional) window and extracts unique genes within it. That is, it identifies genes within the regions of mutation and methylation sites.
 
 ## Installation
 
@@ -40,7 +40,7 @@ The data formats expected for this pipeline are not standard (like vcf, for inst
 
 ### Run the Pipeline
 ```bash
-bash scripts/mutathem.sh <mutation.zip> <methylation.zip> <methylation.txt> [optional: window size]
+bash scripts/muthina.sh <mutation.zip> <methylation.zip> <methylation.txt> [optional: window size]
 ```
 **Note** that the default window size is 1000bp on both sides of any given location.
 
@@ -59,6 +59,6 @@ wget https://gdc-hub.s3.us-east-1.amazonaws.com/download/HM450.hg38.manifest.gen
 ```
 Then run...
 ```bash
-bash scripts/mutathem.sh TCGA-LAML.somaticmutation_wxs.tsv.gz TCGA-LAML.methylation450.tsv.gz HM450.hg38.manifest.gencode.v36.probeMap 500
+bash scripts/muthina.sh TCGA-LAML.somaticmutation_wxs.tsv.gz TCGA-LAML.methylation450.tsv.gz HM450.hg38.manifest.gencode.v36.probeMap 500
 ```
 You should get a list of 10 genes intersected in that region. You will also find 2 files: `unique_gene.txt` with a list of all the genes present in affected regions and `merged_output.tsv` with more info on chromosome locations and mutation and methylation values.
