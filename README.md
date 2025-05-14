@@ -1,3 +1,5 @@
+This is a casual repo for playing around with mutation and methylation data formats from older (Illumina) sequencing platforms — scripts might break in the wild. Use/adapt at your own risk 🙂
+
 # A Pipeline called Muthina 
 (name derived from **mu**tation, me**th**ylation and Illum**ina** because why not)
 
@@ -63,4 +65,4 @@ Then run...
 ```bash
 bash scripts/muthina.sh TCGA-LAML.somaticmutation_wxs.tsv.gz TCGA-LAML.methylation450.tsv.gz HM450.hg38.manifest.gencode.v36.probeMap 500
 ```
-You should get a list of 10 genes intersected in that region. You will also find 2 files: `unique_gene.txt` with a list of all the genes present in affected regions and `merged_output.tsv` with more info on chromosome locations and mutation and methylation values.
+You should get a list of 10 genes intersected in that region; that is, whose mutations may be associated with methylation differences. You will also find 2 files: `unique_gene.txt` with a list of all the genes present in affected regions and `merged_output.tsv` with more information on chromosome locations, mutation, and methylation values.
