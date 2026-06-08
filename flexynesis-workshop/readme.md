@@ -1,4 +1,4 @@
-# Flexynesis Workshop
+# Flexynesis Workshop 2025
 
 Workshop materials completed while exploring
 multi-omics data integration with Flexynesis.
@@ -10,6 +10,6 @@ Contents:
 - Workshop assignment
 
 Notes:
-- Original workshop datasets link are no longer publicly available.
+- Original workshop datasets linked in the notebook are no longer publicly available; however, cBioportal link still works as at June 2026.
 - These notebooks are retained as a record of methods explored during training.
 - Flexynesis was developed by the workshop organizers. Facilitator was the first author in the [flexynesis paper](https://www.nature.com/articles/s41467-025-63688-5).
