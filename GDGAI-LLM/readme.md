@@ -9,4 +9,4 @@ This exercise explored the fundamentals of adapting Large Language Models (LLMs)
 * Model evaluation before and after fine-tuning
 * Comparison of Retrieval-Augmented Generation (RAG) and fine-tuning workflows
 
-This repo contains my workshop notebook and serves as a record of concepts and techniques explored during the session.
+This repo contains my [workshop notebook on Colab](https://colab.research.google.com/drive/1AIjJsKNSWwAG3LUcqqn9fVQyB9hiw-WS?usp=sharing) and serves as a record of concepts and techniques explored during the session.
