@@ -1,0 +1,39 @@
+CREATE TABLE gene (
+    gene_id INT NOT NULL PRIMARY KEY,
+    gene_symbol VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE variant (
+    variant_id INT NOT NULL PRIMARY KEY,
+    chromosome VARCHAR(20),
+    genomic_position BIGINT,
+    reference TEXT,
+    alternate TEXT,
+    canonical_spdi TEXT,
+    variant_type TEXT
+);
+
+CREATE TABLE variant_gene (
+    variant_id INT NOT NULL,
+    gene_id INT NOT NULL,
+    PRIMARY KEY (variant_id, gene_id),
+    FOREIGN KEY (variant_id) REFERENCES variant(variant_id),
+    FOREIGN KEY (gene_id) REFERENCES gene(gene_id)
+);
+
+CREATE TABLE source (
+    source_id INT NOT NULL PRIMARY KEY,
+    source_name VARCHAR(50),
+    access_date DATE
+);
+
+CREATE TABLE classification (
+    classification_id INT NOT NULL PRIMARY KEY,
+    classification_value TEXT,
+    eval_date DATE,
+    review_status TEXT,
+    variant_id INT NOT NULL,
+    source_id INT,
+    FOREIGN KEY (variant_id) REFERENCES variant(variant_id),
+    FOREIGN KEY (source_id) REFERENCES source(source_id)
+);
