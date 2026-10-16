@@ -7,6 +7,7 @@ The workshop covered bacterial genome sequencing analysis, from read quality con
 assessment, and antimicrobial resistance (AMR) profiling.
 
 **Workshop resource:** [Sydney Informatics Hub — Long-Read Sequencing Workshop 2026](https://github.com/Sydney-Informatics-Hub/long-read-sequencing-workshop-2026)
+> Geaghan, M., Antczak, M., Herne, C., & O'Brien, M. J. (2026). WORKSHOP: Long read sequencing for bacterial genomics. Zenodo. https://doi.org/10.5281/zenodo.23327650
 
 ## 2. Clinical Scenario
 
